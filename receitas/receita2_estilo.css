@@ -1,0 +1,31 @@
+p.verso {
+  color: blue;
+}
+
+p.mote {
+  color: red;
+}
+
+a.link:hover {
+  color: red;
+}
+
+img.poeta {
+  border-radius: 50%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px;
+}
+th {
+  background-color: #04aa6d;
+}
