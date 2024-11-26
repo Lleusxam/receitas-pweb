@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+    </style>
+    <script type="module">
+        import { gerarTabela } from './receita7_tabela.js';
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("botaoCarregarUsuarios").addEventListener("click", () => {
+                gerarTabela(
+                    "https://random-data-api.com/api/v2/users?size=3",
+                    ["first_name", "last_name", "email"],
+                    ["Primeiro Nome", "Último Nome", "E-mail"],
+                    "dadosDiv"                                      
+                );
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button id="botaoCarregarUsuarios">Carregar Usuários</button>
+    </div>
+    <div id="dadosDiv"></div>
+</body>
+</html>
