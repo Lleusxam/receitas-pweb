@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #04aa6d;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="botaoCarregar">Carregando cervejas...</button>
+    </div>
+    <div id="cervejasDiv"></div>
+    <script>
+      let cervejas = [
+        { name: "Guiness", alcohol: "10%", style: "Imperial Stout", ibu: "45" },
+        { name: "Desperados", alcohol: "6%", style: "Lager", ibu: "20" },
+        { name: "Becks", alcohol: "5%", style: "Pilsen", ibu: "25" },
+      ];
+
+      const carregarDiv = (
+        cs,
+        targetId = "cervejasDiv",
+        headers = ["Nome", "Álcool", "Estilo", "Amargor"],
+        properties = ["name", "alcohol", "style", "ibu"]
+      ) => {
+        const div = document.getElementById(targetId);
+        if (!div) {
+          console.error(`Elemento com ID "${targetId}" não encontrado.`);
+          return;
+        }
+
+        if (headers.length !== properties.length) {
+          console.error("Os arrays 'headers' e 'properties' devem ter o mesmo comprimento.");
+          return;
+        }
+
+        const tableHeaders = headers
+          .map((header) => `<th>${header}</th>`)
+          .join("");
+
+        const tableRows = cs
+          .map(
+            (item) =>
+              `<tr>${properties
+                .map((prop) => `<td>${item[prop] || ""}</td>`)
+                .join("")}</tr>`
+          )
+          .join("");
+
+        div.innerHTML = `
+          <table>
+            <thead>
+              <tr>${tableHeaders}</tr>
+            </thead>
+            <tbody>${tableRows}</tbody>
+          </table>`;
+      };
+
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", () =>
+        carregarDiv(cervejas, "cervejasDiv")
+      );
+    </script>
+  </body>
+</html>
