@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>   
+   <head>
+      <meta charset="UTF-8">      
+      <style>
+         .sorvete {
+            color: red;
+            text-align: center;
+         }
+
+         table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+         }
+
+         th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+         }
+
+         th {
+            background-color: #f2f2f2;
+         }
+
+         td {
+            color: red;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div id="meu amor">
+         <button id="botaoCarregar">Carregar sorvetes</button>
+         <button id="botaoOrdenar">Mostrar sorvetes ordenados</button>
+         <button id="botaoEmbaralhar">Embaralhar sorvetes</button>
+      </div>            
+   </body>   
+
+   <script>
+      let sorvetes = ["Chocolate", "Morango", "Baunilha"];
+
+      const criarTabela = (sorvetesArray) => `
+         <table>
+            <thead>
+               <tr>
+                  <th>Sorvetes</th>
+               </tr>
+            </thead>
+            <tbody>
+               ${sorvetesArray.map(sorvete => `<tr><td>${sorvete}</td></tr>`).join("")}
+            </tbody>
+         </table>
+      `;
+
+      const carregarSorvetes = () => {
+         let div = document.getElementById("meu amor");
+         div.innerHTML = criarTabela(sorvetes);
+      };
+
+      const ordenarSorvetes = () => {
+         let div = document.getElementById("meu amor");
+         let sorvetesOrdenados = [...sorvetes].sort(); 
+         div.innerHTML = criarTabela(sorvetesOrdenados);
+      };
+
+      const embaralharSorvetes = () => {
+         let div = document.getElementById("meu amor");
+         let sorvetesEmbaralhados = [...sorvetes]
+            .sort(() => Math.random() - 0.5); 
+         div.innerHTML = criarTabela(sorvetesEmbaralhados);
+      };
+
+      document.getElementById("botaoCarregar").addEventListener("click", carregarSorvetes);
+      document.getElementById("botaoOrdenar").addEventListener("click", ordenarSorvetes);
+      document.getElementById("botaoEmbaralhar").addEventListener("click", embaralharSorvetes);
+   </script>
+
+</html>

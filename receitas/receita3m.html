@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <style>
+      #cerveja {
+        opacity: 0;
+        transition: opacity 2s ease;
+      }
+
+      #cerveja.show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="meuAmor">
+      <a href="#" id="linkCarregar">Carregando cervejas...</a>
+    </div>
+    <div id="cerveja"></div>
+  </body>
+
+  <script>
+    function carregarDiv() {
+      let div = document.getElementById("cerveja");
+
+      if (div.classList.contains("show")) {
+        div.classList.remove("show");
+        setTimeout(() => {
+          div.innerHTML = "";
+        }, 2000);
+      } else {
+        div.innerHTML = `<h1>Guinness</h1>`;
+        setTimeout(() => {
+          div.classList.add("show");
+        }, 10);
+      }
+    }
+
+    let link = document.getElementById("linkCarregar");
+    link.addEventListener("click", carregarDiv);
+  </script>
+</html>

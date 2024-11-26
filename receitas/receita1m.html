@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Receita 1</title>
+  </head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+    th {
+      background-color: #04aa6d;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <body>
+    <img
+      src="https://akamai.sscdn.co/uploadfile/letras/playlists/3/a/b/9/3ab92363f7974d679f4194de9f389b5b.jpg"
+      width="200"
+    />
+
+    <h1>Uma trova...</h1>
+
+    <p>
+      Eu só preciso de hoje<br />
+
+      Pra viver e ser feliz<br />
+
+      O passado já me foge<br />
+
+      E o futuro nada diz!<br />
+    </p>
+
+    <br />
+
+    <p>Autor: Francisco Borges</p>
+
+    <br />
+
+    <div class="row">
+      <div class="column">
+        <table id="table">
+          <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Pesquisa</th>
+          </tr>
+          <tr>
+            <td>Água</td>
+            <td>R$2.50</td>
+            <td>
+              <a href="#" onclick="pesquisar('Água')">Água</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Coca-Cola</td>
+            <td>R$8.00</td>
+            <td>
+              <a href="#" onclick="pesquisar('Coca-Cola')">Coca-Cola</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Guaraná</td>
+            <td>R$8.00</td>
+            <td>
+              <a href="#" onclick="pesquisar('Guaraná')">Guaraná</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="column">
+        <table id="table">
+          <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Pesquisa</th>
+          </tr>
+          <tr>
+            <td>Água</td>
+            <td>R$2.50</td>
+            <td>
+              <a href="#" onclick="pesquisar('Água')">Água</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Coca-Cola</td>
+            <td>R$8.00</td>
+            <td>
+              <a href="#" onclick="pesquisar('Coca-Cola')">Coca-Cola</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Guaraná</td>
+            <td>R$8.00</td>
+            <td>
+              <a href="#" onclick="pesquisar('Guaraná')">Guaraná</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      // Função para pesquisar
+      function pesquisar(nome) {
+        let urls = {
+          "Água": "https://pt.wikipedia.org/wiki/Água",
+          "Coca-Cola": "https://pt.wikipedia.org/wiki/Coca-Cola",
+          "Guaraná": "https://pt.wikipedia.org/wiki/Guaraná_(refrigerante)"
+        };
+
+        if (urls[nome]) {
+          window.open(urls[nome], '_blank');
+        }
+      }
+    </script>
+  </body>
+</html>
