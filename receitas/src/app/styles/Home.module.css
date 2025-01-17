@@ -1,0 +1,26 @@
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 50px;
+}
+
+.heading {
+  color: #333;
+}
+
+.link {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link:hover {
+  background-color: #45a049;
+}
