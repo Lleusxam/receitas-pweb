@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Um</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #4CAF50;
+        text-align: center;
+      }
+
+      #tabela {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th, td {
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #ddd;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script src="../libs/react.js"></script>
+    <script src="../libs/react-dom.js"></script>
+    <script src="../libs/babel.min.js"></script>
+
+    <script type="text/babel">
+      function Cabecalho() {
+        return <h1>Minha tabela de bebidas</h1>;
+      }
+
+      const cachaças = [
+        { nome: 'Havana', marca: 'Engenho Anísio Santiago', tipo: 'Pura' },
+        { nome: '51', marca: 'Companhia Müller de Bebidas', tipo: 'Mistura' },
+        { nome: 'Ypióca', marca: 'Ypióca', tipo: 'Pura' },
+        { nome: 'Cachaça São Rafael', marca: 'São Rafael', tipo: 'Premium' },
+      ];
+
+      function TabelaBebidas() {
+        return (
+          <table id="tabela">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cachaças.map((cachaça, index) => (
+                <tr key={index}>
+                  <td>{cachaça.nome}</td>
+                  <td>{cachaça.marca}</td>
+                  <td>{cachaça.tipo}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        );
+      }
+
+      function ExibirTabela() {
+        const [mostrarTabela, setMostrarTabela] = React.useState(false);
+
+        const handleClique = () => {
+          setMostrarTabela(true);
+        };
+
+        return (
+          <div>
+            <Cabecalho />
+            <button onClick={handleClique}>Mostrar Tabela de Cachaças</button>
+            {mostrarTabela && <TabelaBebidas />}
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <ExibirTabela />,
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
