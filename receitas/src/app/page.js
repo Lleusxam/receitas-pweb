@@ -6,6 +6,7 @@ export default function Home() {
       <h1 className={styles.heading}>Receitas de Next</h1>
       <h2>Escolha a Receita</h2>
       <a className={styles.link} href="./receita1/rota1">Receita 1</a>
+      <a className={styles.link} href="./receita2/">Receita 2</a>
     </div>
   );
 }
