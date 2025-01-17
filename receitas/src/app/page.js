@@ -8,6 +8,7 @@ export default function Home() {
       <a className={styles.link} href="./receita1/rota1">Receita 1</a>
       <a className={styles.link} href="./receita2/">Receita 2</a>
       <a className={styles.link} href="./receita3/">Receita 3</a>
+      <a className={styles.link} href="./receita4/movies/">Receita 4</a>
     </div>
   );
 }
