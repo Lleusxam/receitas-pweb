@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>ReactZero</title>
+</head>
+<body>
+
+    <script src="libs/react.js"></script>
+    <script src="libs/react-dom.js"></script>
+  <h2>Tabela Fixa com React</h2>
+  <div id="root"></div>
+
+  <script type="text/javascript">
+    const { createElement } = React;
+    const TabelaFixa = () => {
+      return createElement(
+        "table", 
+        { border: "1" },
+        createElement(
+          "thead", 
+          null,
+          createElement("tr", null, 
+            createElement("th", null, "#"),
+            createElement("th", null, "Nome"),
+            createElement("th", null, "Idade"),
+            createElement("th", null, "Cidade")
+          )
+        ),
+        createElement(
+          "tbody", 
+          null,
+          createElement("tr", null, 
+            createElement("td", null, "1"),
+            createElement("td", null, "João"),
+            createElement("td", null, "23"),
+            createElement("td", null, "São Paulo")
+          ),
+          createElement("tr", null, 
+            createElement("td", null, "2"),
+            createElement("td", null, "Maria"),
+            createElement("td", null, "30"),
+            createElement("td", null, "Rio de Janeiro")
+          ),
+          createElement("tr", null, 
+            createElement("td", null, "3"),
+            createElement("td", null, "Ana"),
+            createElement("td", null, "25"),
+            createElement("td", null, "Belo Horizonte")
+          ),
+          createElement("tr", null, 
+            createElement("td", null, "4"),
+            createElement("td", null, "Carlos"),
+            createElement("td", null, "28"),
+            createElement("td", null, "Curitiba")
+          ),
+          createElement("tr", null, 
+            createElement("td", null, "5"),
+            createElement("td", null, "Pedro"),
+            createElement("td", null, "34"),
+            createElement("td", null, "Porto Alegre")
+          )
+        )
+      );
+    };
+
+    ReactDOM.render(createElement(TabelaFixa), document.getElementById("root"));
+  </script>
+</body>
+</html>
