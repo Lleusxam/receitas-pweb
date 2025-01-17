@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReceitaReact - 2</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script src="../libs/react.js"></script>
+    <script src="../libs/react-dom.js"></script>
+    <script src="../libs/babel.min.js"></script>
+
+    <script type="text/babel">
+      class TabelaBebidas extends React.Component {
+        render() {
+          const { titulo } = this.props; 
+          return (
+            <div>
+              <h1>{titulo}</h1> 
+              <table id="tabela" border="1">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Havana</td>
+                    <td>Engenho Anísio Santiago</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      class TabelaComidas extends React.Component {
+        render() {
+          return (
+            <div>
+              <h1>Tabela de Comidas</h1>
+              <table id="tabela" border="1">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Feijoada</td>
+                    <td>Prato Típico</td>
+                  </tr>
+                  <tr>
+                    <td>Pizza</td>
+                    <td>Fast Food</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      class TabelaFrutas extends React.Component {
+        render() {
+          return (
+            <div>
+              <h1>Tabela de Frutas</h1>
+              <table id="tabela" border="1">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Cor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Maçã</td>
+                    <td>Vermelha</td>
+                  </tr>
+                  <tr>
+                    <td>Banana</td>
+                    <td>Amarela</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <TabelaBebidas titulo="Tabela de Bebidas" />
+          <TabelaComidas />
+          <TabelaFrutas />
+        </div>,
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
