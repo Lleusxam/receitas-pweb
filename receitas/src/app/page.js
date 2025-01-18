@@ -10,6 +10,7 @@ export default function Home() {
       <a className={styles.link} href="./receita3/">Receita 3</a>
       <a className={styles.link} href="./receita4/movies/">Receita 4</a>
       <a className={styles.link} href="./receita5/movies/">Receita 5</a>
+      <a className={styles.link} href="./receita6/clientMovies1/">Receita 6</a>
     </div>
   );
 }
